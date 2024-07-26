@@ -14,10 +14,11 @@ mongoose.connection.on('connected', () => {
 const cowsCtrl = require('./controllers/cows');
 
 app.use(express.urlencoded({ extended: false }));
-app.use(methodoverride('_method'));
+app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 
 // routes go here
+app.get('/', cowsCtrl.home);
 
 app.listen(3000, () => {
     console.log('Listening on port 3000');
