@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Cow</title>
+</head>
+
+<body>
+    <h1>Edit <%= cow.name %></h1>
+
+    <form action="/cows/<%= cow._id %>?_method=PUT" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value='<%= cow.name %>' />
+
+        <label for="gender">Gender:</label>
+        <input type="text" name="gender" id="gender" value='<%= cow.gender %>' />
+
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" value='<%= cow.description %>' />
+
+        <label for="image">Image:</label>
+        <textarea name="image" id="image" value='<%= cow.image %>'></textarea>
+
+        <button type="submit">Update Cow</button>
+    </form>
+
+    <a href='/cows'>Back to Cows</a>
+</body>
+
+</html>
