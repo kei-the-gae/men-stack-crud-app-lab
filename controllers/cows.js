@@ -15,10 +15,15 @@ const index = async (req, res) => {
     const allCows = await Cow.find();
     res.render('cows/index.ejs', { cows: allCows });
 };
+const show = async (req, res) => {
+    const foundCow = await Cow.findById(req.params.cowId);
+    res.render('cows/show.ejs', { cow: foundCow });
+};
 
 module.exports = {
     home,
     new: newCow,
     create,
     index,
+    show,
 };

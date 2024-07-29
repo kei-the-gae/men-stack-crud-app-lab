@@ -22,6 +22,7 @@ app.get('/', cowsCtrl.home);
 app.get('/cows/new', cowsCtrl.new);
 app.post('/cows', cowsCtrl.create);
 app.get('/cows', cowsCtrl.index);
+app.get('/cows/:cowId', cowsCtrl.show);
 
 app.listen(3000, () => {
     console.log('Listening on port 3000');
