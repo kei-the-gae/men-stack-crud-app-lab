@@ -19,6 +19,11 @@ const show = async (req, res) => {
     const foundCow = await Cow.findById(req.params.cowId);
     res.render('cows/show.ejs', { cow: foundCow });
 };
+const edit = async (req, res) => {
+    const foundCow = await Cow.findById(req.params.cowId);
+    console.log(foundCow);
+    res.render('cows/edit.ejs', { cow: foundCow });
+};
 const deleteCow = async (req, res) => {
     await Cow.findByIdAndDelete(req.params.cowId);
     res.redirect('/cows');
@@ -30,5 +35,6 @@ module.exports = {
     new: newCow,
     create,
     show,
+    edit,
     delete: deleteCow,
 };

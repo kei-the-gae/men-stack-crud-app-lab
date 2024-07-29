@@ -23,6 +23,7 @@ app.get('/cows', cowsCtrl.index);
 app.get('/cows/new', cowsCtrl.new);
 app.post('/cows', cowsCtrl.create);
 app.get('/cows/:cowId', cowsCtrl.show);
+app.get('/cows/:cowId/edit', cowsCtrl.edit);
 app.delete('/cows/:cowId', cowsCtrl.delete);
 
 app.listen(3000, () => {

@@ -21,6 +21,7 @@
     <form action='/cows/<%= cow._id %>?_method=DELETE' method='post'>
         <button type="submit">Delete <%= cow.name %></button>
     </form>
+    <a href='/cows/<%= cow._id %>/edit'>Edit <%= cow.name %></a>
     <a href='/cows'>Back to Cows</a>
 </body>
 
