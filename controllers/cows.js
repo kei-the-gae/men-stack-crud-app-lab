@@ -11,9 +11,14 @@ const create = async (req, res) => {
     await Cow.create(req.body);
     res.redirect('/cows/new');
 };
+const index = async (req, res) => {
+    const allCows = await Cow.find();
+    res.render('cows/index.ejs', { cows: allCows });
+};
 
 module.exports = {
     home,
     new: newCow,
     create,
+    index,
 };
