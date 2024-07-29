@@ -20,6 +20,7 @@ app.use(morgan('dev'));
 // routes go here
 app.get('/', cowsCtrl.home);
 app.get('/cows/new', cowsCtrl.new);
+app.post('/cows', cowsCtrl.create);
 
 app.listen(3000, () => {
     console.log('Listening on port 3000');

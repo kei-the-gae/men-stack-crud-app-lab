@@ -7,8 +7,13 @@ const home = async (req, res) => {
 const newCow = async (req, res) => {
     res.render('cows/new.ejs');
 };
+const create = async (req, res) => {
+    await Cow.create(req.body);
+    res.redirect('/cows/new');
+};
 
 module.exports = {
     home,
     new: newCow,
+    create,
 };
