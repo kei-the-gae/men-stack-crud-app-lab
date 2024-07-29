@@ -5,7 +5,7 @@ const home = async (req, res) => {
     res.render('index.ejs');
 };
 const newCow = async (req, res) => {
-    res.send('This route sends the user a form page');
+    res.render('cows/new.ejs');
 };
 
 module.exports = {
