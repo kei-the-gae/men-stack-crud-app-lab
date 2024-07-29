@@ -9,10 +9,10 @@
 
 <body>
     <h1>All Cows</h1>
-    <a href="/cows/new">Add New Cow</a>
+    <a href='/cows/new'>Add New Cow</a>
     <ul>
         <% cows.forEach(cow => { %>
-        <li><%= cow.name %></li>
+        <li><a href='/cows/<%= cow._id %>'><%= cow.name %></a></li>
         <% }); %>
     </ul>
 </body>
