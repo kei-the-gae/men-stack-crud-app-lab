@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= cow.name %></title>
+</head>
+
+<body>
+    <h1><%= cow.name %></h1>
+    <% if (cow.image) { %>
+    <img src='<%= cow.image %>' alt='photo of <%= cow.name %>'>
+    <% } %>
+    <% if (cow.gender === 'Male') { %>
+    <p>He is a cow that is <%= cow.description %>.</p>
+    <% } %>
+    <% if (cow.gender === 'Female') { %>
+    <p>She is a cow that is <%= cow.description %></p>
+    <% } %>
+    <a href='/cows'>Back to Cows</a>
+</body>
+
+</html>
