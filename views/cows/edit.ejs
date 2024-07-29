@@ -17,6 +17,9 @@
         <label for="gender">Gender:</label>
         <input type="text" name="gender" id="gender" value='<%= cow.gender %>' />
 
+        <label for="isHighland">Is this cow a highland cow?</label>
+        <input type="checkbox" name="isHighland" id="isHighland" <% if (cow.isHighland) { %>checked<% } %> />
+
         <label for="description">Description:</label>
         <input type="text" name="description" id="description" value='<%= cow.description %>' />
 

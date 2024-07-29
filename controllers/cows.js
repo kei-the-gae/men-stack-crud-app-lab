@@ -12,6 +12,11 @@ const newCow = async (req, res) => {
     res.render('cows/new.ejs');
 };
 const create = async (req, res) => {
+    if (req.body.isHighland === "on") {
+        req.body.isHighland = true;
+    } else {
+        req.body.isHighland = false;
+    };
     await Cow.create(req.body);
     res.redirect('/cows');
 };
@@ -25,6 +30,11 @@ const edit = async (req, res) => {
     res.render('cows/edit.ejs', { cow: foundCow });
 };
 const update = async (req, res) => {
+    if (req.body.isHighland === "on") {
+        req.body.isHighland = true;
+    } else {
+        req.body.isHighland = false;
+    };
     await Cow.findByIdAndUpdate(req.params.cowId, req.body);
     res.redirect(`/cows/${req.params.cowId}`);
 };
