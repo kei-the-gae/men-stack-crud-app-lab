@@ -13,18 +13,10 @@
     <img src='<%= cow.image %>' alt='photo of <%= cow.name %>'>
     <% }; %>
     <% if (cow.gender === 'Male') { %>
-    <% if (cow.isHighland) { %>
-    <p>He is a highland cow that is <%= cow.description %>.</p>
-    <% } else { %>
-    <p>He is a cow that is <%= cow.description %>.</p>
-    <% }; %>
+    <p>He is a <% if (cow.isHighland) { %>highland <% } %>cow that is <%= cow.description %>.</p>
     <% }; %>
     <% if (cow.gender === 'Female') { %>
-    <% if (cow.isHighland) { %>
-    <p>She is a highland cow that is <%= cow.description %>.</p>
-    <% } else { %>
-    <p>She is a cow that is <%= cow.description %>.</p>
-    <% }; %>
+    <p>She is a <% if (cow.isHighland) { %>highland <% } %>cow that is <%= cow.description %>.</p>
     <% }; %>
     <form action='/cows/<%= cow._id %>?_method=DELETE' method='post'>
         <button type="submit">Delete <%= cow.name %></button>
