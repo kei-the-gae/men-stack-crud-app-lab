@@ -9,7 +9,7 @@ const newCow = async (req, res) => {
 };
 const create = async (req, res) => {
     await Cow.create(req.body);
-    res.redirect('/cows/new');
+    res.redirect('/cows');
 };
 const index = async (req, res) => {
     const allCows = await Cow.find();
