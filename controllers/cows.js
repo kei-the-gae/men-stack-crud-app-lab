@@ -20,7 +20,8 @@ const show = async (req, res) => {
     res.render('cows/show.ejs', { cow: foundCow });
 };
 const deleteCow = async (req, res) => {
-    res.send('This is the delete route');
+    await Cow.findByIdAndDelete(req.params.cowId);
+    res.redirect('/cows');
 };
 
 module.exports = {
