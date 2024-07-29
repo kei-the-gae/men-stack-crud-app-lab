@@ -18,6 +18,9 @@
     <% if (cow.gender === 'Female') { %>
     <p>She is a cow that is <%= cow.description %></p>
     <% } %>
+    <form action='/cows/<%= cow._id %>?_method=DELETE' method='post'>
+        <button type="submit">Delete <%= cow.name %></button>
+    </form>
     <a href='/cows'>Back to Cows</a>
 </body>
 
